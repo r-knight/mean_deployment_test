@@ -1,0 +1,10 @@
+
+<form (submit)="onSubmitCreateProduct()" class='new-product-form'>
+	<label>Title:</label>
+	<input type="text" name="newProduct.title" [(ngModel)]="newProduct.title" />
+	<label>Price:</label>
+	<input type="number" name="newProduct.price" [(ngModel)]="newProduct.price" min="0" step="0.01"/>
+	<label>Image Url:</label>
+	<input type="text" name="newProduct.imageUrl" [(ngModel)]="newProduct.imageUrl" />
+		<input type="submit" value="Submit Product" />
+</form>

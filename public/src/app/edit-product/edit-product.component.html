@@ -1,0 +1,14 @@
+<div class='existing-product-info' *ngIf='productToEdit'>
+	<p>Editing Product: {{productToEdit._id}}</p>
+	<form (submit)="onSubmitEditAuthor()" class='edit-product-form'>
+		<label>Title:</label>
+		<input type="text" name="productToEdit.title" [(ngModel)]="productToEdit.title" />
+		<label>Price:</label>
+		<input type="text" name="productToEdit.price" [(ngModel)]="productToEdit.price" min="0" step="0.01"/>
+		<label>Image Url:</label>
+		<input type="text" name="productToEdit.imageUrl" [(ngModel)]="productToEdit.imageUrl" />
+		<input type="hidden" value="productToEdit._id">
+		<input type="submit" value="Edit Product" />
+	</form>
+</div>
+<p *ngIf='error'>{{error}}</p>

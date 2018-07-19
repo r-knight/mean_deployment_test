@@ -1,0 +1,10 @@
+<p>This is in the product-list component</p>
+<a [routerLink]="['/products/new']">Add a new product</a>
+<ul *ngIf='products'>
+	<li *ngFor='let product of products'>
+		<img *ngIf='product.imageUrl' src={{product.imageUrl}} [routerLink]="['/products/edit/'+product._id]">
+		<p>{{product.title}}</p>
+		<p>${{product.price}}</p>
+		<button [routerLink]="['/products/delete/'+product._id]">Delete</button><button [routerLink]="['/products/edit/'+product._id]">Edit</button>
+	</li>
+</ul>

@@ -1,0 +1,11 @@
+<div class='existing-product-info' *ngIf='productToDelete'>
+	<p>Confirm delete for Product: {{productToDelete._id}}</p>
+	<p>{{productToDelete.title}}</p>
+	<p>{{productToDelete.price}}</p>
+	<img *ngIf='productToDelete.imageUrl' src={{productToDelete.imageUrl}} [routerLink]="['/products/edit/'+productToDelete._id]">
+	<p>{{productToDelete._id}}</p>
+	<form (submit)="onSubmitDeleteProduct()" class='delete-product-form'>
+		<input type="submit" value="Delete" />
+	</form>
+</div>
+<p *ngIf='error'>{{error}}</p>
